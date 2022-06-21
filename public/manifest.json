@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Digital_signature_auth_app",
   "version": "0.1.0",
-  "description": "My Chrome Extension",
+  "description": "Extensions for Digital Signature Authentication Website",
   "icons": {
     "16": "icons/icon_16.png",
     "32": "icons/icon_32.png",
@@ -14,20 +14,20 @@
   },
   "action": {
     "default_title": "Digital_signature_auth_app",
-    "default_popup": "popup.html"
+    "default_popup": "pages/index.html"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "webRequest",
+    "tabs"
   ],
+  "host_permissions": ["*://*/*"],
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
-      "run_at": "document_idle",
-      "js": [
-        "contentScript.js"
-      ]
+      "js": ["scripts/register.js", "scripts/index.js", "scripts/request.js"]
     }
   ]
 }

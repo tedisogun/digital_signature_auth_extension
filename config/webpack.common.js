@@ -2,7 +2,7 @@
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+var webpack = require('webpack');
 const PATHS = require('./paths');
 
 // used in the module rules and in the stats exlude list
@@ -49,6 +49,12 @@ const common = {
     ],
   },
   plugins: [
+
+    //Buffer js plugin, alternative to node buffer
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+  }),
+
     // Copy static assets from `public` folder to `build` folder
     new CopyWebpackPlugin({
       patterns: [
