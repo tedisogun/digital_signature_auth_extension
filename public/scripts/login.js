@@ -52,22 +52,4 @@ popupAbort.addEventListener("click", () => {
 })
 
 
-// console.log('loginjs')
-// console.log(new Date)
-// chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
-//   console.log("sssss")
-//     if(request.type === "DSA_LOGIN_BACKGROUND_TO_POPUP_DATA"){
-
-
-//       document.getElementById("login-hostname").innerHTML = request.payload.hostname
-
-//     }
-// })
-
-
-
-// let dsabuttonclick = document.getElementById("login_page_title").innerHTML = "Login dari sini?";
-
-// chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-//   const tab = tabs[0];
 

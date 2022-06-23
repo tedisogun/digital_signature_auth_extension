@@ -1,22 +1,50 @@
-// async function fetchData() {
-
-//     document.getElementById("date").innerHTML="2022-05-25";
-//     document.getElementById("areaName").innerHTML="Indonesia";
-//     document.getElementById("latestBy").innerHTML="555555";
-//     document.getElementById("deathNew").innerHTML="5000";
-// }
-// fetchData();
-
-
-// chrome.runtime.onMessage.addListener(
-//     function(request, sender, sendResponse) {
-//       chrome.storage.sync.get(['127.0.0.1'], function(result) {
-//         console.log('Value currently is ' + JSON.stringify(result));
-//       });
-//       console.log(request)
-//       document.getElementById('dumpit').innerHTML = request[4].value
-//     }
-//   );
+// After registerjs has been created, send message to backgroundservice to retrive data
+chrome.runtime.sendMessage(
+    {
+      type: 'POPUP_REGISTER_REQUEST_DATA_BACKGROUND',
+      payload: { 
+      },
+    },
+    response => {
+      document.getElementById("login-hostname").innerHTML = response.hostname
+    }
+  );
 
 
+// Get Button Generate & Abort. make listener
+let popupGenerate = document.getElementById("POPUP_GENERATE");
+let popupAbort = document.getElementById("POPUP_ABORT");
 
+
+popupGenerate.addEventListener("click", () => {
+    chrome.runtime.sendMessage(
+      {
+        type: 'POPUP_REGISTER_GENERATE_USER_CLICK_BUTTON_BACKGROUND',
+        payload: { 
+          approve : true
+        },
+      },
+      response => {
+      
+      }
+    );
+  
+  
+  })
+  
+
+  popupAbort.addEventListener("click", () => {
+  
+    chrome.runtime.sendMessage(
+      {
+        type: 'POPUP_REGISTER_GENERATE_USER_CLICK_BUTTON_BACKGROUND',
+        payload: { 
+          approve : false
+        },
+      },
+      response => {
+      
+      }
+    );
+  
+  })
