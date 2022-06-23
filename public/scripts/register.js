@@ -8,12 +8,15 @@
 // fetchData();
 
 
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-      chrome.storage.sync.get(['127.0.0.1'], function(result) {
-        console.log('Value currently is ' + JSON.stringify(result));
-      });
-      console.log(request)
-      document.getElementById('dumpit').innerHTML = request[4].value
-    }
-  );
+// chrome.runtime.onMessage.addListener(
+//     function(request, sender, sendResponse) {
+//       chrome.storage.sync.get(['127.0.0.1'], function(result) {
+//         console.log('Value currently is ' + JSON.stringify(result));
+//       });
+//       console.log(request)
+//       document.getElementById('dumpit').innerHTML = request[4].value
+//     }
+//   );
+
+
+

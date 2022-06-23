@@ -14,7 +14,7 @@
   },
   "action": {
     "default_title": "Digital_signature_auth_app",
-    "default_popup": "pages/index.html"
+    "default_popup": "popup.html"
   },
   "permissions": [
     "storage",
@@ -27,7 +27,7 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["scripts/register.js", "scripts/index.js", "scripts/request.js"]
+      "js": [ "contentScript.js", "scripts/request.js"]
     }
   ]
 }
